@@ -6,24 +6,24 @@ function tic_tac_toe_board () {
 
   for(let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      let random = Math.ceil(Math.random())
+      let random = Math.random()
       if (x < 5 && o <5) {
-        if (random > 1) {
+        if (random < 0.5) {
           x++
           board[i].push("X")
-          // console.log("--- push X --", board[i]);
+          console.log("--- push X --", board[i]);
         } else {
           o++
           board[i].push("O")
-          // console.log("--- push O --", board[i]);
+          console.log("--- push O --", board[i]);
         }
       } else {
         if (x === 5) {
           board[i].push("O")
-          // console.log("--- push O --", board[i]);
+          console.log("--- push O --", board[i]);
         } else {
           board[i].push("X")
-          // console.log("--- push X --", board[i]);
+          console.log("--- push X --", board[i]);
         }
       }
     }
