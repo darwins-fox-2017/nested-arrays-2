@@ -8,24 +8,22 @@ let roster = [
 ]
 
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
-;
-
 function convert_roster_format (nestedArray) {
   let arrTemp = [],
       header  = [];
-
-  for (let countHeader = 0; countHeader < roster[0].length; countHeader++){
+//loop for cut header
+  for (let countHeader = 0; countHeader < nestedArray[0].length; countHeader++){
     header.push(roster[0][countHeader])
   }
 
-  for (let i = 1; i < roster.length; i++) {
+//loop for push header & value
+  for (let i = 1; i < nestedArray.length; i++) {
     let arrObject = {}
-    for (let j = 0; j < roster[i].length; j++) {
-      arrObject[header[j]] = roster[i][j]
+    for (let j = 0; j < nestedArray[i].length; j++) {
+      arrObject[header[j]] = nestedArray[i][j]
     }
     arrTemp.push(arrObject)
   }
-  // console.log(header);
   return arrTemp
 }
 
