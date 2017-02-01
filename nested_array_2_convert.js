@@ -1,20 +1,34 @@
 let roster = [
-  ['Number', 'Name', 'Position', 'Points per Game'],
-  [12, 'Joe Schmo', 'Center', [14, 32, 7, 0, 23] ],
-  [9, 'Ms. Buckets', 'Point Guard', [19, 0, 11, 22, 0] ],
-  [31, 'Harvey Kay', 'Shooting Guard', [0, 30, 16, 0, 25] ],
-  [7, 'Sally Talls', 'Power Forward ', [18, 29, 26, 31, 19] ],
-  [22, 'MK DiBoux ', 'Small Forward ', [11, 0, 23, 17, 0] ]
+  ['Number', 'Name', 'Position', 'Points per Game','status'],
+  [12, 'Joe Schmo', 'Center', [14, 32, 7, 0, 23], false ],
+  [9, 'Ms. Buckets', 'Point Guard', [19, 0, 11, 22, 0], true ],
+  [31, 'Harvey Kay', 'Shooting Guard', [0, 30, 16, 0, 25], false ],
+  [7, 'Sally Talls', 'Power Forward ', [18, 29, 26, 31, 19], true ],
+  [22, 'MK DiBoux ', 'Small Forward ', [11, 0, 23, 17, 0], false ]
 ]
 
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
-
 function convert_roster_format (nestedArray) {
-    // your convert code here
+  let arrTemp = [],
+      header  = [];
+//loop for cut header
+  for (let countHeader = 0; countHeader < nestedArray[0].length; countHeader++){
+    header.push(roster[0][countHeader])
+  }
+
+//loop for push header & value
+  for (let i = 1; i < nestedArray.length; i++) {
+    let arrObject = {}
+    for (let j = 0; j < nestedArray[i].length; j++) {
+      arrObject[header[j]] = nestedArray[i][j]
+    }
+    arrTemp.push(arrObject)
+  }
+  return arrTemp
 }
 
 let object_roster = convert_roster_format(roster)
-console.log(object_roster[2])
+console.log(object_roster)
 
 // => { "Number": 31, "Name": "Harvey Kay", "Position": "Shooting Guard", "Points per Game": [0, 30, 16, 0, 25] }
 
