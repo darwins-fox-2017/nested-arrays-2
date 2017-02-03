@@ -1,25 +1,27 @@
 function tic_tac_toe_board () {
-  let x = 0
-  let o = 0
+  let cross = 0
+  let circle = 0
   let board = [[], [], []]
+  console.log('board : ', board.length)
 
   for (let i = 0; i < board.length; i++) {
     for (let j=0; j < board.length; j++) {
 
-      let randomPin = Math.random();
-      if ( x<5 && o<5) {
-        if ( randomPin > 0.5) {
-          x++
-          board[i].push('x')
+      let randomPlay = Math.floor(Math.random()*10);
+
+      if (circle < 5 && cross < 5) {
+        if (randomPlay > 5) {
+          circle++
+          board[i].push('O')
         } else {
-          o++
-          board[i].push('o')
+          cross++
+          board[i].push('X')
         }
       } else {
-        if (x === 5) {
-          board[i].push('x')
+        if (cross === 5) {
+          board[i].push("O")
         } else {
-          board[i].push('o')
+          board[i].push("X")
         }
       }
     }
