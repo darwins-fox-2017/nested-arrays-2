@@ -1,10 +1,10 @@
 var roster = [
     ["Number", "Name", "Position", "Points per Game"],
-    ["12", "Joe Schmo", "Center", [14, 32, 7, 0, 23] ],
-    ["9", "Ms. Buckets ", "Point Guard", [19, 0, 11, 22, 0] ],
-    ["31", "Harvey Kay", "Shooting Guard", [0, 30, 16, 0, 25]  ],
-    ["7", "Sally Talls", "Power Forward ", [18, 29, 26, 31, 19] ],
-    ["22", "MK DiBoux ", "Small Forward ", [11, 0, 23, 17, 0] ]
+    ["12", "Joe Schmo", "Center", [14, 32, 7, 0, 23]],
+    ["9", "Ms. Buckets ", "Point Guard", [19, 0, 11, 22, 0]],
+    ["31", "Harvey Kay", "Shooting Guard", [0, 30, 16, 0, 25]],
+    ["7", "Sally Talls", "Power Forward ", [18, 29, 26, 31, 19]],
+    ["22", "MK DiBoux ", "Small Forward ", [11, 0, 23, 17, 0]]
 ]
 
 // [ [roster[0][0], roster[1][0] ], [roster[0][1], roster[1][1] ],...
@@ -12,14 +12,9 @@ var roster = [
 function convert_roster_format(nestedArray) {
   // buat array penampung
   var arr = []
-  var tes = []
 
   // lakukan looping untuk mengisi nilai array ke dalam Object
   // lalu simpan object di dalam aray
-  // for (var i = 1; i < roster[0].length; i++ ) {
-  //   myObj[ roster[0] ]
-  // }
-  //
   for(var i = 1; i < roster.length; i++) {
   var myObj = new Object;
   myObj[ roster[0][0] ] = roster[i][0];
@@ -29,7 +24,6 @@ function convert_roster_format(nestedArray) {
   arr.push(myObj);
   }
   return arr;
-
 }
 
 
